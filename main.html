@@ -1,0 +1,379 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Dashboard - Brand</title>
+    <link rel="stylesheet" href="https://bootstrapstudio.io/demo//embed//bootstrap/5/sb-admin-2/bootstrap.min.css">
+    <style bs-system-element="" bs-hidden="">
+
+		:root {
+			--canvas-background: #1c1e1f;
+			--scrollbar-thumb: #677073;
+			--scrollbar-thumb-hover: #767F82;
+		}
+
+		[bs-app-theme="light"] {
+			--canvas-background: #f0f0f0;
+			--scrollbar-thumb: #b0b4b9;
+    		--scrollbar-thumb-hover: #a1a6ac;
+		}
+
+		html::-webkit-scrollbar {
+			height: 7px;
+			width: 7px;
+			background: var(--canvas-background);
+		}
+
+		html::-webkit-scrollbar-thumb {
+			background: var(--scrollbar-thumb);
+		}
+
+		html::-webkit-scrollbar-thumb:hover {
+			background: var(--scrollbar-thumb-hover);
+		}
+
+		html::-webkit-scrollbar-corner {
+			display:none;
+		}
+
+		html{
+			-webkit-user-select: none;
+			user-select:none;
+			overflow: auto !important;
+		}
+
+		body{
+			min-height:650px;
+		}
+
+		body[bs-extra-whitespace]:after {
+			content:'';
+			display: block;
+			height: 500px;
+		}
+
+		*{
+			cursor:default !important;
+			pointer-events:all !important;
+		}
+
+		a{
+			cursor:text;
+		}
+
+		img:not([src]):not([srcset]){
+			width: 100px;
+			height: 80px;
+			position: relative;
+		}
+
+		img:not([src]):not([srcset]):after{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='50' height='50'%3E%3Cdefs%3E%3Cpath d='M23 31l-3.97-2.9L19 28l-.24-.09.19.13L13 33v2h24v-2l-3-9-5-3-6 10zm-2-12c0-1.66-1.34-3-3-3s-3 1.34-3 3 1.34 3 3 3 3-1.34 3-3zm-11-8c-.55 0-1 .45-1 1v26c0 .55.45 1 1 1h30c.55 0 1-.45 1-1V12c0-.55-.45-1-1-1H10zm28 26H12c-.55 0-1-.45-1-1V14c0-.55.45-1 1-1h26c.55 0 1 .45 1 1v22c-.3.67-.63 1-1 1z' id='a'/%3E%3C/defs%3E%3Cuse xlink:href='%23a' fill='%23fff'/%3E%3Cuse xlink:href='%23a' fill-opacity='0' stroke='%23000' stroke-opacity='0'/%3E%3C/svg%3E");
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-color: #eaeaeb;
+		}
+
+		/* Stopping css animations on the stage */
+
+		*:not([bs-anim-preview]){
+			transition:none !important;
+			transition-duration: 0s !important;
+		}
+
+		[bs-cut],
+		[bs-dragged]{
+			opacity:0.3 !important;
+		}
+
+		/* Inline editing */
+
+		[contenteditable=true] {
+			box-shadow:-1px -1px 1px rgba(17, 142, 232, 0.85),
+				1px 1px 1px rgba(17, 142, 232, 0.85),
+				0 0 11px rgba(17, 142, 232, 0.85) !important;
+			outline:none !important;
+			min-height:1em;
+			cursor:initial !important;
+		}
+
+		[contenteditable=true] *:not([contenteditable=false]){
+			cursor:initial !important;
+		}
+
+		[contenteditable=true]:empty:before {
+		    content: "\00a0\00a0" !important;
+		}
+
+		[contenteditable=true] [contenteditable=false] {
+			box-shadow:0 0 0 1px rgba(17, 142, 232, 0.85);
+		}
+
+		/* Preventing mouse events for embeds */
+
+		iframe, embed, object, audio{
+			pointer-events: none !important;
+		}
+
+		html.hit-testing iframe,
+		html.hit-testing embed,
+		html.hit-testing object,
+		html.hit-testing audio {
+			pointer-events: all !important;
+		}
+
+
+
+		/* Modal scroll and canvas scroll have the same styles: */
+
+		body.modal-open .modal::-webkit-scrollbar {
+			height: 7px;
+			width: 7px;
+			background: rgba(0,0,0,0.2);
+		}
+
+		body.modal-open .modal::-webkit-scrollbar-corner {
+			display: none;
+		}
+
+		body.modal-open .modal::-webkit-scrollbar-thumb {
+			background: rgb(137, 143, 146);
+		}
+
+		body.modal-open .modal::-webkit-scrollbar-track {
+			background: #2f363a;
+		}
+
+		/* Giving sizes to some elements. */
+
+		div[class*="col-"]:empty:before,
+		form:empty:before,
+		.row:empty:before,
+		.form-row:empty:before,
+		.form-group:empty:before,
+		.container:empty:before,
+		.vstack:empty:before,
+		.hstack:empty:before,
+		div[class*="container-"]:empty:before{
+			background-color: #eee;
+			content: 'Empty Row';
+			font-size: 20px;
+			color: #aaa;
+			font-weight: bold;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 80px;
+			padding: 0 10px;
+			line-height: 26px;
+		}
+
+		div[class*="col-"]:empty:before{
+			content:'Empty Column';
+		}
+
+		form:empty:before{
+			content:'Empty Form';
+		}
+
+		.form-group:empty:before{
+			content:'Empty Form Group';
+		}
+
+		form.navbar-form:empty:before{
+			display: inline-block;
+			padding:0 40px;
+			font-size:16px;
+			line-height:36px;
+		}
+
+		.container:empty:before,
+		div[class*="container-"]:empty:before{
+			content:'Empty Container';
+		}
+
+		.vstack:empty:before,
+		.hstack:empty:before {
+			content:'Empty Stack';
+		}
+
+		.thumbnail img:not([src]){
+			background-repeat: no-repeat;
+		    background-size: 100% 85%;
+		    background-position-y: 50%;
+		    width: 100%;
+			height: 180px;
+		}
+
+		/* Making the dropdown menus have a white background when they're edited */
+
+		.dropdown-item:active,
+		.dropdown-menu>li>a:focus{
+			background:unset;
+			color:unset;
+		}
+
+		/* This is needed because the li items are 0x0px by default,
+		and bootstrap studio can't select them */
+
+		.pagination>li {
+		  float: left;
+		}
+
+		/* Iframes without src are colored in gray */
+		.embed-responsive iframe:not([src]){
+			background-color:#ddd;
+		}
+
+		/* This is needed, otherwise split buttons in input groups break into two lines. */
+
+		.input-group-btn .btn-group > .btn{
+			float:none;
+		}
+
+
+
+		body[bs-no-scroll] {
+			min-height: 100vh !important;
+			height: 100vh !important;
+			overflow: hidden !important;
+		}
+
+		div[class*="col-"]:empty,
+		div.col:empty{
+			display:flex;
+		}
+
+		div[class*="col-"]:empty:before,
+		form:empty:before,
+		.row:empty:before,
+		.container:empty:before,
+		div[class*="container-"]:empty:before{
+			width: 100%;
+		}
+
+		div.col:empty:before{
+			background-color:#eee;
+			content:'Empty Column';
+			line-height:40px;
+			text-align: center;
+			display:block;
+			line-height:80px;
+			font-size:24px;
+			color:#aaa;
+			font-weight:bold;
+			width:100%;
+		}
+
+		.toast-header img:not([src]):not([srcset]) {
+			width: 30px;
+			height: 30px;
+		}
+
+		/* Stopping css spinner animations */
+
+		.spinner-grow:not([bs-spinner-animation]),
+		.spinner-border:not([bs-spinner-animation]) {
+			animation: none;
+		}
+
+		.spinner-grow:not([bs-spinner-animation]) {
+			opacity: 1;
+			transform: scale(.8);
+		}
+
+		.custom-range::-webkit-slider-runnable-track {
+		    cursor: inherit;
+		}
+
+		/* Prevent stretched links from capturing all page clicks */
+		a.stretched-link:after {
+			pointer-events: none;
+		}
+
+		body#page-top {
+            background-color: #f8f9fc;
+        }
+
+    </style>
+    <link rel="stylesheet" bs-hidden="1" bs-system-element="1" href="https://bootstrapstudio.io/demo//embed/fonts/fontawesome-all.min.css">
+
+</head>
+<body id="page-top">
+<div id="wrapper">
+    <div class="d-flex flex-column" id="content-wrapper">
+        <div id="content">
+            <div class="container-fluid">
+                <div class="d-flex justify-content-between align-items-center mb-4 mt-4"><h3 class="text-dark mb-0">
+                    FollowBot</h3><a class="btn btn-primary btn-sm d-sm-inline-block" role="button" href="#"><i
+                        class="fas fa-robot fa-sm text-white-50"></i>&nbsp;&nbsp;Run Bot</a></div>
+                <div class="row">
+                    <div class="col-md-6 col-xl-3 mb-4">
+                        <div class="card shadow border-start-primary py-2">
+                            <div class="card-body">
+                                <div class="row align-items-center no-gutters">
+                                    <div class="col me-2">
+                                        <div class="text-uppercase text-primary fw-bold text-xs mb-1"><span>Total Points</span>
+                                        </div>
+                                        <div class="text-dark fw-bold h5 mb-0"><span>$40,000</span></div>
+                                    </div>
+                                    <div class="col-auto"><i class="fas fa-calendar fa-2x text-gray-300"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-3 mb-4">
+                        <div class="card shadow border-start-success py-2">
+                            <div class="card-body">
+                                <div class="row align-items-center no-gutters">
+                                    <div class="col me-2">
+                                        <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>Earnings (annual)</span>
+                                        </div>
+                                        <div class="text-dark fw-bold h5 mb-0"><span>$215,000</span></div>
+                                    </div>
+                                    <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card shadow mb-4">
+                            <div class="card-header d-flex justify-content-between align-items-center"><h6
+                                    class="text-primary fw-bold m-0">Earnings Overview</h6>
+                                <div class="dropdown no-arrow">
+                                    <button class="btn btn-link btn-sm dropdown-toggle" aria-expanded="false"
+                                            data-bs-toggle="dropdown" type="button"><i
+                                            class="fas fa-ellipsis-v text-gray-400"></i></button>
+                                    <div class="dropdown-menu shadow dropdown-menu-end animated--fade-in"><p
+                                            class="text-center dropdown-header">dropdown header:</p><a
+                                            class="dropdown-item" href="#">&nbsp;Action</a><a class="dropdown-item"
+                                                                                              href="#">&nbsp;Another
+                                        action</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">&nbsp;Something else here</a></div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart-area">
+                                    <canvas height="160" style="display: block; width: 487px; height: 160px;"
+                                            width="487"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
