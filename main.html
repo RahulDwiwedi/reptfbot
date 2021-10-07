@@ -313,7 +313,7 @@
         <div id="content">
             <div class="container-fluid">
                 <div class="d-flex justify-content-between align-items-center mb-4 mt-4"><h3 class="text-dark mb-0">
-                    FollowBot</h3><a class="btn btn-primary btn-sm d-sm-inline-block" role="button" href="#"><i
+                    FollowBot</h3><a class="btn btn-primary btn-sm d-sm-inline-block" role="button" href="/run-bot/"><i
                         class="fas fa-robot fa-sm text-white-50"></i>&nbsp;&nbsp;Run Bot</a></div>
                 <div class="row">
                     <div class="col-md-6 col-xl-3 mb-4">
@@ -323,7 +323,7 @@
                                     <div class="col me-2">
                                         <div class="text-uppercase text-primary fw-bold text-xs mb-1"><span>Total Points</span>
                                         </div>
-                                        <div class="text-dark fw-bold h5 mb-0"><span>$40,000</span></div>
+                                        <div class="text-dark fw-bold h5 mb-0"><span>{{data.points}}</span></div>
                                     </div>
                                     <div class="col-auto"><i class="fas fa-calendar fa-2x text-gray-300"></i></div>
                                 </div>
@@ -335,9 +335,9 @@
                             <div class="card-body">
                                 <div class="row align-items-center no-gutters">
                                     <div class="col me-2">
-                                        <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>Earnings (annual)</span>
+                                        <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>Earnings </span>
                                         </div>
-                                        <div class="text-dark fw-bold h5 mb-0"><span>$215,000</span></div>
+                                        <div class="text-dark fw-bold h5 mb-0"><span>${{data.earned}}</span></div>
                                     </div>
                                     <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
                                 </div>
